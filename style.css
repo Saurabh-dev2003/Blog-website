@@ -1,0 +1,400 @@
+/* styles.css
+   Simple, responsive styles for the blog project.
+*/
+
+/* Basic reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    color: #222;
+    background: #b3b3bb;
+}
+
+/* Container constraint */
+.container {
+    width: 94%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Header */
+.site-header {
+    background: linear-gradient(90deg, #ffffffcc, #f0f4ffcc);
+    border-bottom: 1px solid #e6e8ee;
+    position:sticky;
+    top: 0;
+    z-index: 30;
+    backdrop-filter: blur(2px);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 0.4rem 0;
+}
+
+.site-logo {
+    width: 90px;
+    height: 90px;
+}
+
+
+/* Nav */
+.main-nav ul{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    list-style-type: none;
+
+}
+
+.main-nav ul li {
+    text-decoration: none;
+    padding: 0.4rem 0.6rem;
+    border-radius: 8px;
+    color: #0c2b5a;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+
+.main-nav ul li:hover {
+    position: sticky;
+    background: #0c2b5a;
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(12, 43, 90, 0.08);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+}
+
+/* Hero */
+.hero {
+    padding: 1.4rem 0;
+    text-align: left;
+}
+
+.hero h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    color: #0c2b5a;
+    text-shadow: 3px 3px 10px #0c2b5a;
+}
+
+.hero h2 {
+    transform: translateX(-50px);
+    opacity: 0;
+    animation: slideLeft 1.2s ease forwards;
+}
+
+@keyframes slideLeft {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.hero p {
+    font-size: 1.3rem;
+    color: #415268;
+    margin-bottom: 0.6rem;
+}
+
+/* Search */
+#searchInput {
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #d6d8df;
+    width: 100%;
+    max-width: 420px;
+}
+
+/* Posts list: cards */
+.posts-list {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 2rem;
+}
+
+.post-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(13, 23, 43, 0.06);
+    border: 1px solid #eef0f5;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+}
+
+.post-card .card-body {
+    padding: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.post-card .meta {
+    color: #6b7280;
+    font-size: 0.85rem;
+}
+
+.post-card h3 {
+    margin-top: 0.2rem;
+    font-size: 1.05rem;
+    color: #0c2b5a;
+}
+
+.post-card p.excerpt {
+    color: #475569;
+    font-size: 0.95rem;
+    flex: 1;
+    margin-bottom: 0.6rem;
+}
+
+.post-card .read-btn {
+    align-self: flex-start;
+    background: #0c2b5a;
+    color: #fff;
+    padding: 0.45rem 0.7rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* Single post view */
+.post-view {
+    padding: 1rem 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.single-post {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 0.6rem;
+    box-shadow: 0 6px 18px rgba(13, 23, 43, 0.06);
+    border: 1px solid #eef0f5;
+}
+
+.single-post img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+}
+
+.single-post h2 {
+    color: #0c2b5a;
+    margin-bottom: 0.3rem;
+}
+.author{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 10px 0;
+}
+#image-1{
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+.author{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 10px 0;
+}
+.author h4{
+    text-align: center;
+}
+
+.author .meta {
+    padding-top: 5px;
+    color: #131416;
+}
+#shareIcon-1 #shareIcon-2 #shareIcon-3{
+    position: relative;
+    top: 3px;
+    width: 30px;
+    height: 30px;
+    opacity: 0.5;
+}
+#shareIcon-1 #shareIcon-2 #shareIcon-3:active{
+    opacity: 1.0;
+}
+
+/* Comments */
+.comments-section {
+    margin-top: 1rem;
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    background: #fff;
+    padding: 0.9rem;
+    border-radius: 8px;
+    border: 1px solid #eef0f5;
+}
+
+.comment-form input,
+.comment-form textarea {
+    padding: 0.6rem;
+    border-radius: 6px;
+    border: 1px solid #d6d8df;
+    width: 100%;
+}
+
+.btn {
+    background: #0c2b5a;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 0.9rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-link {
+    background: none;
+    border: none;
+    color: #0c2b5a;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-bottom: 0.6rem;
+}
+
+/* Comments list */
+.comments-list {
+    margin-top: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.comment {
+    background: #fff;
+    padding: 0.7rem;
+    border-radius: 8px;
+    border: 1px solid #eef0f5;
+}
+
+.comment .who {
+    font-weight: 700;
+    color: #0c2b5a;
+}
+
+.comment .when {
+    color: #6b7280;
+    font-size: 0.82rem;
+}
+
+/* Footer */
+.site-footer {
+    background: #0c2b5a;
+    margin-top: 2rem;
+    padding: 1rem 0;
+    text-align: center;
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* Responsive rules */
+@media (max-width: 800px) {
+
+    /* Logo Resize */
+    .site-logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* Grid Collapse */
+    .posts-list {
+        grid-template-columns: 1fr;
+    }
+
+    /* Show Hamburger */
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+        background: none;
+        border: none;
+        font-size: 35px;
+        cursor: pointer;
+        color: #0c2b5a;
+    }
+
+    /* Hide desktop nav */
+    .main-nav ul {
+        display: none;
+    }
+
+    /* =======================================
+       MOBILE SLIDING DRAWER NAVIGATION
+    ======================================= */
+    .main-nav {
+        position: fixed;
+        top: 0;
+        left: -260px;
+        width: 250px;
+        height: 100vh;
+        background: white;
+        box-shadow: 4px 0 15px rgba(0,0,0,0.15);
+        padding-top: 5rem;
+        transition: left 0.4s ease;
+        z-index: 300;
+    }
+
+    .main-nav.show {
+        left: 0;
+    }
+
+    .main-nav ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .main-nav ul li {
+        padding: 15px 20px;
+        border-bottom: 1px solid #eee;
+        width: 100%;
+
+    }
+}
+
+/* ===========================================
+   Small Phones
+=========================================== */
+@media (max-width: 420px) {
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+}
